@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <div class="spacer"></div>
+        <h1>Sorting Algorithm Visualizer</h1>
+        <div class="spacer"></div>
+        <div id="chart-container"></div>
+        <div id="utility">
+            <div class="button-container">
+                <button onclick="randomArray()">Randomize Data</button>
+                <button onclick="bubbleSort()">Bubble Sort</button>
+                <button onclick="randomArray()" disabled>Insertion Sort</button>
+            </div>
+            <div class="slider-container">
+                <div id = "size-slider">
+                    <p>Array Size : </p> 
+                    <input id="size" type="range" min="10" max="50" value="1" steps="1" onChange="updateSize()" /> 
+                    <p id="size-number">10</p>
+                </div>
+                <div id = "speed-slider">
+                    <p>Speed : </p> 
+                    <input id="speed" type="range" min="1" max="100" value="1" steps="1" onChange="updateSpeed()" /> 
+                    <p id="speed-number">1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>Made by Felix Fernando</footer>
+</body>
+<script src="script.js"></script>
+</html>

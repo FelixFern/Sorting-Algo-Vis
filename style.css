@@ -1,0 +1,64 @@
+body {
+    text-align: center;
+    background-color: rgb(252, 245, 237);
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    margin-bottom: 5px;
+}
+p {
+    width: 95px;
+}
+.spacer {
+    height: 50px;
+}
+#utility { 
+    margin: auto;
+    margin-top: 60px;
+    overflow: hidden;
+    width: 30%;
+    padding: 40px 0 40px 0;
+    border-radius: 1%;
+    box-shadow:  0px 6px 12px 0px rgba(0,0,0,0.37);
+}
+.button-container  {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.slider-container {
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+#size-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#speed-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#chart-container {
+    margin-top: 50px;
+    border-top: black solid 3px;
+    margin:auto;
+    width: 80vw;
+    height: 30vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+#chart-container div {
+    width: 1.5%;
+    height: 20%;
+    background-color: orange;
+}
+
+footer {
+    margin-top: 80px;
+    font-size: 15px;
+    color: darkgrey;
+}
