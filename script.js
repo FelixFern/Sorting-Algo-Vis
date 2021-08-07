@@ -1,6 +1,6 @@
 data = []
 bg_color = []
-speed = 1
+speed = 10
 size = 10
 
 for(let i = 0; i < size; i++) {
@@ -43,8 +43,9 @@ function sleep(ms) {
 }
 
 function updateSpeed() { 
-    speed = document.getElementById("speed").value * 1000
+    speed = document.getElementById("speed").value * 10
     document.getElementById("speed-number").innerHTML = document.getElementById("speed").value
+    console.log(speed)
 }
 
 async function bubbleSort() {
@@ -53,7 +54,7 @@ async function bubbleSort() {
             container.childNodes[j].style.backgroundColor = "red"
             container.childNodes[j+1].style.backgroundColor = "yellow"
             if(data[j] > data[j+1]) {
-                await sleep(100/speed)
+                await sleep(1000/speed)
                 let temp = data[j]
                 data[j] = data[j+1]
                 data[j+1] = temp
@@ -63,7 +64,7 @@ async function bubbleSort() {
                 }
                 container.childNodes[j].style.backgroundColor = "yellow"
                 container.childNodes[j+1].style.backgroundColor = "red"
-                await sleep(100/speed)
+                await sleep(1000/speed)
             }
             container.childNodes[j].style.backgroundColor = "orange"
             container.childNodes[j+1].style.backgroundColor = "orange"
