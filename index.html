@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
+    <div class="content">
         <div class="spacer"></div>
         <h1>Sorting Algorithm Visualizer</h1>
         <div class="spacer"></div>
@@ -19,18 +19,33 @@
         <div id="utility">
             <div class="button-container">
                 <button onclick="randomArray()">Randomize Data</button>
-                <button onclick="bubbleSort()">Bubble Sort</button>
-                <button onclick="randomArray()" disabled>Insertion Sort</button>
+                <select name="sort" id="sort">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                </select>
+                <button onclick="sortButton()">Sort</button>
             </div>
             <div class="slider-container">
-                <div id = "size-slider">
+                <div id ="size-slider">
                     <p>Array Size : </p> 
-                    <input id="size" type="range" min="10" max="50" value="1" steps="1" onChange="updateSize()" /> 
+                    <input id="size" type="range" min="10" max="100" value="1" steps="1" onChange="updateSize()" /> 
                     <p id="size-number">10</p>
                 </div>
+                <div id = "max-slider">
+                    <p>Maximum value : </p> 
+                    <input id="max" type="range" min="1" max="100" value="100" steps="1" onChange="updateMax()" /> 
+                    <p id="max-number">100</p>
+                </div>
+                <!-- need fixing to do
+                <div id = "min-slider">
+                    <p>Minimum value: </p> 
+                    <input id="min" type="range" min="1" max="100" value="1" steps="1" onChange="updateMin()" /> 
+                    <p id="min-number">1</p>
+                </div>
+                -->
                 <div id = "speed-slider">
                     <p>Speed : </p> 
-                    <input id="speed" type="range" min="1" max="100" value="1" steps="1" onChange="updateSpeed()" /> 
+                    <input id="speed" type="range" min="1" max="1000" value="1" steps="1" onChange="updateSpeed()" /> 
                     <p id="speed-number">1</p>
                 </div>
             </div>
