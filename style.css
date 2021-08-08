@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: rgb(252, 245, 237);
+
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
     background-size: 40px 40px;
@@ -93,7 +93,7 @@ footer {
         margin-top: 40px;
     }
     h1 {
-        font-size: 40px;
+        font-size: 35px;
         margin-top: 5px;
         margin-bottom: 0;
     }
