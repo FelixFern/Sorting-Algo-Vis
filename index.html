@@ -42,36 +42,38 @@
                 <select name="sort" id="sort">
                     <option value="bubble">Bubble Sort</option>
                     <option value="insertion">Insertion Sort</option>
+                    <option value="selection">Selection Sort</option>
                 </select>
                 <button onclick="sortButton()">Sort</button>
+
             </div>
             <div class="slider-container">
                 <div id ="size-slider">
-                    <p>Array Size : </p> 
+                    <p class="text">Array Size : </p> 
                     <input id="size" type="range" min="10" max="100" value="1" steps="1" onChange="updateSize()" /> 
-                    <p id="size-number">10</p>
+                    <p id="size-number" class="number">10</p>
                 </div>
                 <div id = "max-slider">
-                    <p>Maximum value : </p> 
+                    <p class="text">Maximum value : </p> 
                     <input id="max" type="range" min="1" max="100" value="100" steps="1" onChange="updateMax()" /> 
-                    <p id="max-number">100</p>
+                    <p id="max-number" class="number">100</p>
                 </div>
-                <!-- need fixing to do
-                <div id = "min-slider">
-                    <p>Minimum value: </p> 
+                <!-- 
+                <div id ="min-slider">
+                    <p class="text">Minimum value: </p> 
                     <input id="min" type="range" min="1" max="100" value="1" steps="1" onChange="updateMin()" /> 
-                    <p id="min-number">1</p>
+                    <p id="min-number" class="number">1</p>
                 </div>
                 -->
                 <div id = "speed-slider">
-                    <p>Speed : </p> 
-                    <input id="speed" type="range" min="1" max="1000" value="1" steps="1" onChange="updateSpeed()" /> 
-                    <p id="speed-number">1</p>
+                    <p class="text">Speed : </p> 
+                    <input id="speed" type="range" min="10" max="1000" value="1" steps="1" onChange="updateSpeed()" /> 
+                    <p id="speed-number" class="number">10</p>
                 </div>
             </div>
         </div>
     </div>
-    <footer>Made by Felix Fernando</footer>
+    <footer>Made by Felix Fernando in Javascript</footer>
 </body>
 <script src="script.js"></script>
 </html>

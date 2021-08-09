@@ -25,8 +25,9 @@ function sortButton() {
             console.log("insertion sort")
             insertionSort()
             break
-        case "merge": 
-            console.log("merge sort")
+        case "selection": 
+            console.log("selection sort")
+            selectionSort()
             break
     }
 }
@@ -56,7 +57,7 @@ function updateSize(){
 }
 
 function updateSpeed() { 
-    speed = document.getElementById("speed").value * 10
+    speed = document.getElementById("speed").value
     document.getElementById("speed-number").innerHTML = document.getElementById("speed").value
     console.log(speed)
 }
@@ -75,11 +76,11 @@ function updateMin() {
 }
 
 
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
 
+// Bubble Sort
 async function bubbleSort() {
     for(let i = 0; i < size; i++) {
         for(let j = 0; j < size-1; j++) {
@@ -108,14 +109,13 @@ async function bubbleSort() {
     }
 }
 
+// Insertion Sort
 async function insertionSort() {
     for (let i = 1; i < size; i++) {
-        // Choosing the first element in our unsorted subarray
         let current = data[i];
-        // The last element of our sorted subarray
         let j = i-1; 
         while ((j > -1) && (current < data[j])) {
-            container.childNodes[j+1].style.backgroundColor = "red"
+            container.childNodes[j+1].style.backgroundColor = "yellow"
             await sleep(10000/speed)
             temp = data[j+1]
             data[j+1] = data[j];
@@ -124,7 +124,7 @@ async function insertionSort() {
             for(let x = 0; x < size; x++) {
                 container.innerHTML+='<div style="height:'+data[x]+'%">'+ data[x] +'</div>';
             }
-            container.childNodes[j].style.backgroundColor = "red"
+            container.childNodes[j].style.backgroundColor = "yellow"
             await sleep(1000/speed)
             j--;
         }
@@ -136,4 +136,43 @@ async function insertionSort() {
         await sleep(20)
         container.childNodes[i].style.backgroundColor = "lightgreen"
     }
+}
+
+// Selection Sort 
+async function selectionSort() {
+    for(let i = 0; i < size; i++) {
+        let minIdx = i
+        container.childNodes[i].style.backgroundColor = "red"
+        await sleep(10000/speed)
+        for(let j = i+1; j < size; j++) {
+            container.childNodes[j].style.backgroundColor = "yellow"
+            await sleep(10000/speed)
+            if(data[minIdx] > data[j]) {
+                container.childNodes[minIdx].style.backgroundColor = "yellow"
+                container.childNodes[i].style.backgroundColor = "red"
+                minIdx = j
+                container.childNodes[j].style.backgroundColor = "lightgreen"
+                await sleep(10000/speed)
+            }
+        }
+        temp = data[i] 
+        data[i] = data[minIdx]
+        data[minIdx] = temp
+        container.innerHTML = ""
+        for(let x = 0; x < size; x++) {
+            container.innerHTML+='<div style="height:'+data[x]+'%">'+ data[x] +'</div>';
+        }
+        await sleep(100/speed)
+        container.childNodes[i].style.backgroundColor = "lightgreen"
+        container.childNodes[minIdx].style.backgroundColor = "red"
+        await sleep(10000/speed)
+        container.childNodes[i].style.backgroundColor = "orange"
+        container.childNodes[minIdx].style.backgroundColor = "orange"
+    }
+
+    for(let i = 0; i < size; i++) {
+        await sleep(20)
+        container.childNodes[i].style.backgroundColor = "lightgreen"
+    }
+   
 }
